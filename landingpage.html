@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Md Saqlain Mustaque | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #fff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      animation: slideDown 1s ease-out;
+    }
+
+    .nav__logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .nav__links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav__links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav__links a:hover {
+      color: #ffcc00;
+    }
+
+    .btn {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      margin: 5px;
+    }
+
+    .btn:hover {
+      background-color: #e6b800;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 50px 0;
+    }
+
+    .content {
+      max-width: 600px;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .content h1 span {
+      color: #ffcc00;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .role {
+      font-style: italic;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #ffcc00;
+    }
+
+    .image {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-top: 30px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+      animation: zoomIn 1.2s ease-out;
+    }
+
+    .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .image_bg {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, #ffcc00 10%, transparent 70%);
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    .skills, .projects, .contact {
+      margin-top: 80px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .skills h2, .projects h2, .contact h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: #ffcc00;
+    }
+
+    .skill-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .skill-card, .project-card {
+      background: #ffffff20;
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+
+    .skill-card:hover, .project-card:hover {
+      transform: translateY(-10px);
+      background-color: #ffffff30;
+    }
+
+    .skill-card h3, .project-card h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .nav__links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .image {
+        margin-top: 20px;
+      }
+
+      .skill-cards, .project-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <nav>
+        <div class="nav__logo">JobPortal</div>
+        <ul class="nav__links">
+          <li class="link"><a href="#">Home</a></li>
+          <li class="link"><a href="#skills">Skills</a></li>
+          <li class="link"><a href="#projects">Projects</a></li>
+          <li class="link"><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="file:///C:/Users/Dell/Downloads/Saqlain_Resume.pdf" download><button class="btn">Download Resume</button></a>
+      </nav>
+
+      <div class="content">
+        <h1><span>Md</span><br>Saqlain Mustaque</h1>
+        <p>
+          I am a Computer Engineering undergraduate from Integral University, Lucknow and a passionate technology enthusiast who loves building and innovating.
+        </p>
+        <p class="role">Role: Data Analyst,Web Developer</p>
+        <button class="btn">Hire Me</button>
+
+        <div class="image">
+          <span class="image_bg"></span>
+          <img src="c:\Users\Dell\OneDrive\Pictures\IMG-20240925-WA0009.jpg" alt="Md Saqlain Mustaque portrait">
+        </div>
+      </div>
+    </header>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+      <h2>My Skills</h2>
+      <div class="skill-cards">
+        <div class="skill-card">
+          <h3>Frontend</h3>
+          <p>HTML, CSS, JavaScript, React</p>
+        </div>
+        <div class="skill-card">
+          <h3>Python</h3>
+          <p>Data Analysis, Automation, Flask</p>
+        </div>
+        <div class="skill-card">
+          <h3>SQL</h3>
+          <p>MySQL, PostgreSQL, Query Optimization</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
+      <div class="skill-cards">
+        <div class="project-card">
+          <h3>PG Life</h3>
+          <p>This project was part of my internship at Internshala. It is a student accommodation platform that allows students to browse and book PGs online using an interactive frontend with authentication and search filters.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Contact Me
